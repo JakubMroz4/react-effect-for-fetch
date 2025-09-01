@@ -19,9 +19,11 @@ function UsersSection() {
       });
   }, []);
 
+  /*
   useEffect(() => {
     console.log(data);
   }, [data])
+  */
 
   if (loading){
         return <section>
