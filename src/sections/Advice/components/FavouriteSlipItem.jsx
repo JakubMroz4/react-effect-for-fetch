@@ -1,11 +1,11 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React from "react";
+import { useState, useEffect } from "react";
 
-function FavouriteSlipItem({url, id}) {
-    const [data, setData] = useState([]);
-        const [loading, setLoading] = useState(true);
-    
- useEffect(() => {
+function FavouriteSlipItem({ url, id }) {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
     fetch(url + "/" + id)
       .then((res) => res.json())
       .then((result) => {
@@ -20,18 +20,13 @@ function FavouriteSlipItem({url, id}) {
 
   useEffect(() => {
     console.log(data);
-  }, [data])
+  }, [data]);
 
-if (loading){
-    return <section className="adivce-slip">
-    </section>
+  if (loading) {
+    return <section className="adivce-slip"></section>;
+  }
+
+  return <li>{data.slip.advice}</li>;
 }
 
-  return (
-    <li>
-        {data.slip.advice}
-    </li>
-  )
-}
-
-export default FavouriteSlipItem
+export default FavouriteSlipItem;

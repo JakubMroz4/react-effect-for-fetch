@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import UsersList from './components/UsersList';
+import { useState, useEffect } from "react";
+import UsersList from "./components/UsersList";
 
 function UsersSection() {
   const apiUrl = "https://boolean-uk-api-server.fly.dev/JakubMroz4/contact";
@@ -25,24 +25,23 @@ function UsersSection() {
   }, [data])
   */
 
-  if (loading){
-        return <section>
-      <h2>Users Section</h2>
-      <div className="scroll-container">
-
-      </div>
-    </section>
-    }
-
+  if (loading) {
+    return (
+      <section>
+        <h2>Users Section</h2>
+        <div className="scroll-container"></div>
+      </section>
+    );
+  }
 
   return (
     <section>
       <h2>Users Section</h2>
       <div className="scroll-container">
-        <UsersList data={data}/>
+        <UsersList data={data} />
       </div>
     </section>
-  )
+  );
 }
 
-export default UsersSection
+export default UsersSection;

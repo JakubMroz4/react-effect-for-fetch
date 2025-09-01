@@ -1,23 +1,22 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import FavouriteSlipItem from './FavouriteSlipItem'
+import React from "react";
+import { useEffect } from "react";
+import FavouriteSlipItem from "./FavouriteSlipItem";
 
-function FavouriteSlipsList({url, favourites}) {
-
-    useEffect(() => {
-        console.log(favourites)
-    }, [favourites])
+function FavouriteSlipsList({ url, favourites }) {
+  useEffect(() => {
+    console.log(favourites);
+  }, [favourites]);
 
   return (
     <section className="favourtite-slips-list">
-    <h3>Favourite Advice Slips</h3>
-    <ul>
+      <h3>Favourite Advice Slips</h3>
+      <ul>
         {favourites.map((item, index) => (
-            <FavouriteSlipItem key={index} url={url} id={item}/>
+          <FavouriteSlipItem key={index} url={url} id={item} />
         ))}
-    </ul>
-  </section>
-  )
+      </ul>
+    </section>
+  );
 }
 
-export default FavouriteSlipsList
+export default FavouriteSlipsList;

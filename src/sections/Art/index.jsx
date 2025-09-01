@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import ArtList from './components/ArtList';
+import { useState, useEffect } from "react";
+import ArtList from "./components/ArtList";
 
 function ArtsSection() {
   const apiUrl = "https://boolean-uk-api-server.fly.dev/art";
@@ -26,23 +26,23 @@ function ArtsSection() {
   }, [data])
   */
 
-  if (loading){
-        return <section>
-      <h2>Arts Section</h2>
-      <div className="scroll-container">
-        
-      </div>
-    </section>
-    }
+  if (loading) {
+    return (
+      <section>
+        <h2>Arts Section</h2>
+        <div className="scroll-container"></div>
+      </section>
+    );
+  }
 
   return (
     <section>
       <h2>Arts Section</h2>
       <div className="scroll-container">
-        <ArtList data={data} url={imgUrl}/>
+        <ArtList data={data} url={imgUrl} />
       </div>
     </section>
-  )
+  );
 }
 
-export default ArtsSection
+export default ArtsSection;
